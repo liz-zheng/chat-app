@@ -1,0 +1,181 @@
+
+.user-info-ctn {
+  margin-bottom: 0.5em;
+  padding: 1.25em 1.25em;
+}
+
+.user-info-ctn .username {
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: .25em;
+  text-transform: capitalize;
+}
+
+.user-info-ctn .online-status {
+  font-size: .75em;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+
+.username-ctn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.username-ctn .join-btn {
+  text-align: center;
+  background-color: #e52437;
+  border: none;
+  color: #FFFAFA;
+  padding: 15px 32px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  width: 315px;
+}
+
+.username-ctn .input{
+  margin-bottom: 20px;
+}
+
+.username-ctn .username{
+  font-size: 14px;
+  width: 300px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.left-nav {
+  background-color: #e52437;
+  height: 100%;
+  color: #fffafa;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+.left-nav li {
+  padding: 1em 1.25em;
+}
+.left-nav li:hover {
+  background-color: #C91F37;
+}
+
+.left-nav li:active {
+    background-color: #a81221;
+}
+
+.room-list-ctn .selected {
+    background-color: #8B0000;
+}
+
+.main {
+  margin-left: 250px;
+}
+
+.main li.curr-user {
+  color: #F62242;
+}
+
+.room-details-ctn {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.room-details-ctn .room-users {
+  color: #757D75;
+  height: auto;
+  min-height: 40px;
+  box-shadow: 0px 1px 1px #888;
+  text-transform: capitalize;
+}
+
+.main .room-users ul li {
+  display: inline;
+}
+
+.room-details-ctn .room-name {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #757D75;
+  margin-bottom: 0.25em;
+}
+
+.msg-ctn {
+  background-color: #ECF0F1;
+  padding: 0.25em 1em;
+  height: 550px;
+  box-shadow: 0px 1px 1px #888;
+  overflow: scroll;
+  margin-top: 2px;
+}
+
+.msg-ctn li.user-msgs {
+  overflow: hidden;
+  width: 50%;
+  margin-left: 50%;
+}
+
+.msg-ctn li.other-msgs {
+  overflow: hidden;
+  width: 50%;
+}
+.msg-ctn .user-msgs .msg {
+  color: #FFFFFF;
+  background-color: #e52437;
+  padding: 1em;
+  border-radius: 25px;
+}
+
+.msg-ctn .other-msgs .msg {
+  color: #212121;
+  background-color: #FFFFFF;
+  padding: 1em;
+  border-radius: 25px;
+}
+
+.msg-ctn .user {
+  margin-top: .25em;
+  margin-bottom: 1.5em;
+  color: #757D75;
+  text-transform: capitalize;
+}
+
+.msg-input-ctn {
+  height: auto;
+  min-height: 50px;
+  text-align: center;
+}
+
+.msg-input-ctn .msg-input{
+  margin-top: 5%;
+  width: 100%;
+}
+
+.msg-input .form .input{
+  font-size: .75em;
+  width: 85%;
+  height: 30px;
+}
+
+.msg-input .form .send-btn {
+  text-align: center;
+  border: none;
+  color: #59ABE3;
+  cursor: pointer;
+  margin-left: 0.75em;
+  margin-top: 0.25em;
+  font-size: 14px;
+  font-weight: bold;
+}
