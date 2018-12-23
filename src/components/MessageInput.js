@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as consts from '../consts';
 import axios from 'axios';
 
-
 class MessageInput extends Component {
 
   constructor(props) {
@@ -13,6 +12,7 @@ class MessageInput extends Component {
         name: this.props.username,
         message: ''
       },
+      error: null,
     };
   }
 

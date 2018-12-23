@@ -81,3 +81,20 @@ A couple of things to say:
 2. Feel free to use any libraries or frameworks you want, with the idea that they're increasing your productivity, not writing the app for you.
 
 3. **Please don't** modify the server.js file. We're looking to see your front-end skills!
+
+## How to run app
+
+1. In your terminal, cd to this repo
+```bash
+$ cd doordash-chat-app
+```
+2. Run the following commands
+```bash
+$ npm install
+$ npm start
+```
+3. Then run the api server in another terminal
+```bash
+$ npm run api-server
+```
+4. Open http://localhost:3000/ in browser
