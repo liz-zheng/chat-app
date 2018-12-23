@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class UserInfo extends Component {
-  
+
   constructor(props){
     super(props)
     this.state = {
@@ -14,6 +14,11 @@ class UserInfo extends Component {
     this.timer = setInterval(() => this.setState({
      time: this.state.time + 1
    }), 60000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.timer);
+    this.timer = null;
   }
 
   render(){

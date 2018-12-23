@@ -18,6 +18,16 @@ class RoomsDetail extends Component {
     }
   }
 
+  componentDidMount() {
+    this.onUpdateChatroom();
+    this.timer = setInterval(() => this.getMessages(), 2000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    this.timer = null;
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if(prevProps.selectedRoomId !== this.props.selectedRoomId) {
       this.setState({
@@ -54,10 +64,6 @@ class RoomsDetail extends Component {
         });
       }
     )}
-
-  componentDidMount() {
-    this.onUpdateChatroom();
-  }
 
   intersperse = (arr, sep) => {
     if(arr.length === 0) return [];
