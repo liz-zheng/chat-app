@@ -20,12 +20,6 @@ class RoomsDetail extends Component {
 
   componentDidMount() {
     this.onUpdateChatroom();
-    this.timer = setInterval(() => this.getMessages(), 2000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-    this.timer = null;
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -79,7 +73,7 @@ class RoomsDetail extends Component {
 
   renderUsers = () => {
     let { users, username } = this.state
-    var listUsers = users.map((user, i) => {
+    let listUsers = users.map((user, i) => {
       let currentUser = username === user ? "curr-user" : "user"
       return (
         <li className={currentUser} key={i}>{user}</li>
