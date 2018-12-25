@@ -14,55 +14,26 @@ class RoomsDetail extends Component {
       roomName: '',
       users: [],
       messages: [],
-      error: null,
-      endpoint: `http://127.0.0.1:4001`
+      error: null
     }
+    this.endpoint = "http://127.0.0.1:4001";
+    this.socket = socketIOClient(this.endpoint, {query: `roomId=${this.props.selectedRoomId}`});
   }
 
   componentDidMount() {
-    // this.updateAll();
-    console.log("mount")
-
     this.onUpdateChatroom()
-    this.updateSocket()
-  }
-
-  componentWillUnmount() {
-    console.log("unmounted")
+    this.socket.on("getMessages", data => this.setState({messages: data}));
   }
 
   componentDidUpdate(prevProps, prevState) {
     if(prevProps.selectedRoomId !== this.props.selectedRoomId) {
-
-      console.log("update")
-
-      let {endpoint} = this.state;
-      console.log("socket room is: "+this.props.selectedRoomId)
-      let socket = socketIOClient(endpoint, {query: `roomId=${prevProps.selectedRoomId}`});
-      // socket.on("disconnect")
-      // socket = socketIOClient(endpoint, {query: `roomId=${this.props.selectedRoomId}`});
-
-      socket.on("FromAPI", data => {
-        console.log(data)
-      });
-
-
+      this.socket.disconnect();
+      this.socket = socketIOClient(this.endpoint, {query: `roomId=${this.props.selectedRoomId}`});
+      this.socket.on("getMessages", data => this.setState({messages: data}));
       this.setState({
         roomId: this.props.selectedRoomId,
-      }, () => {this.getRoomDetails()})
+      }, () => {this.onUpdateChatroom()})
     }
-  }
-
-  updateAll = () => {
-    this.onUpdateChatroom();
-    this.updateSocket();
-  }
-
-  updateSocket = () => {
-    let { endpoint, roomId } = this.state;
-    console.log("socket room is: "+roomId)
-    let socket = socketIOClient(endpoint, {query: `roomId=${roomId}`});
-    socket.on("FromAPI", data => this.setState({messages: data}));
   }
 
   getRoomDetails = () => {
@@ -81,7 +52,6 @@ class RoomsDetail extends Component {
   }
 
   getMessages = () => {
-    console.log("get messages room id: "+this.state.roomId)
     axios.get(`${API_ROOT_URL}/${this.state.roomId}/messages`)
       .then((response) => {
         this.setState({
@@ -103,7 +73,6 @@ class RoomsDetail extends Component {
   }
 
   onUpdateChatroom = () => {
-    console.log("chatroom")
     this.getRoomDetails();
     this.getMessages();
   }
