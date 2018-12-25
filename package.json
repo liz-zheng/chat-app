@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "express": "~4.0.0",
+    "body-parser": "~1.0.1",
     "serve": "^3.1.0"
   },
   "dependencies": {
