@@ -1,4 +1,3 @@
-
 export const TYPE_USERNAME = "Type your username...";
 export const JOIN_CHAT = "Join the DoorDash Chat!"
 export const SEND = "Send";

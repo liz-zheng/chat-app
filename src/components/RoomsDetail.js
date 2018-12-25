@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { API_ROOT_URL } from '../consts';
 import axios from 'axios';
-import Messages from './Messages'
-import MessageInput from './MessageInput'
-
+import Messages from './Messages';
+import MessageInput from './MessageInput';
+import socketIOClient from 'socket.io-client';
 class RoomsDetail extends Component {
 
   constructor(props){
@@ -14,18 +14,24 @@ class RoomsDetail extends Component {
       roomName: '',
       users: [],
       messages: [],
-      error: null,
+      error: null
     }
+    this.endpoint = "http://127.0.0.1:4001";
+    this.socket = socketIOClient(this.endpoint, {query: `roomId=${this.props.selectedRoomId}`});
   }
 
   componentDidMount() {
-    this.onUpdateChatroom();
+    this.onUpdateChatroom()
+    this.socket.on("getMessages", data => this.setState({messages: data}));
   }
 
   componentDidUpdate(prevProps, prevState) {
     if(prevProps.selectedRoomId !== this.props.selectedRoomId) {
+      this.socket.disconnect();
+      this.socket = socketIOClient(this.endpoint, {query: `roomId=${this.props.selectedRoomId}`});
+      this.socket.on("getMessages", data => this.setState({messages: data}));
       this.setState({
-        roomId: this.props.selectedRoomId
+        roomId: this.props.selectedRoomId,
       }, () => {this.onUpdateChatroom()})
     }
   }
