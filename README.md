@@ -93,7 +93,12 @@ $ cd doordash-chat-app
 $ npm install
 $ npm start
 ```
-3. Then run the api server in another terminal
+3. Open a new terminal and run
+```bash
+$ npm run api-server
+```
+
+4. Open a new terminal and run
 ```bash
 $ npm run api-server
 ```
