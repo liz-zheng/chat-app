@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "serve": "^3.1.0",
+    "body-parser": "^1.0.2",
     "express": "~4.0.0",
-    "body-parser": "~1.0.1"
+    "serve": "^3.1.0"
   },
   "dependencies": {
+    "i": "^0.3.6",
+    "npm": "^6.5.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
@@ -15,7 +17,8 @@
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
     "redux-promise": "^0.6.0",
-    "shortid": "^2.2.8"
+    "shortid": "^2.2.8",
+    "socket.io": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
