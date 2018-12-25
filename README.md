@@ -97,9 +97,8 @@ $ npm start
 ```bash
 $ npm run api-server
 ```
-
 4. Open a new terminal and run
 ```bash
-$ npm run api-server
+$ npm run socket-server
 ```
-4. Open http://localhost:3000/ in browser
+5. Open http://localhost:3000/ in browser
