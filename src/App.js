@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style/style.css';
-import UsernameInput from './components/UsernameInput'
+import Login from './components/Login'
 import Chatroom from './components/Chatroom'
 
 class App extends Component {
@@ -31,7 +31,7 @@ class App extends Component {
     }
     return (
       <div>
-        <UsernameInput onJoinChat={this.onJoinChat}/>
+        <Login onJoinChat={this.onJoinChat}/>
       </div>
     );
   }

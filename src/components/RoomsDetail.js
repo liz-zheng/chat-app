@@ -4,6 +4,7 @@ import axios from 'axios';
 import Messages from './Messages';
 import MessageInput from './MessageInput';
 import socketIOClient from 'socket.io-client';
+
 class RoomsDetail extends Component {
 
   constructor(props){

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as consts from '../consts';
 import '../style/style.css'
 
-class UsernameInput extends Component {
+class Login extends Component {
 
   constructor(props) {
     super(props);
@@ -36,4 +36,4 @@ class UsernameInput extends Component {
   }
 }
 
-export default UsernameInput;
+export default Login;
