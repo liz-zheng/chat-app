@@ -2,7 +2,7 @@ const express = require("express");
 const http = require("http");
 const socketIo = require("socket.io");
 const axios = require("axios");
-const port = process.env.PORT || 4001;
+const port = 4001;
 
 const app = express();
 
@@ -18,7 +18,7 @@ io.on("connection", socket => {
   let roomId = socket.handshake.query['roomId']
   console.log("New client connected"), setInterval(
     () => getApiAndEmit(socket, roomId),
-    2000
+    1000
   );
   socket.on("disconnect", () => console.log("Client disconnected"));
 });

@@ -33,7 +33,7 @@ class RoomsDetail extends Component {
       this.socket.on("getMessages", data => this.setState({messages: data}));
       this.setState({
         roomId: this.props.selectedRoomId,
-      }, () => {this.onUpdateChatroom()})
+      })
     }
   }
 
