@@ -2,7 +2,7 @@
 
 1. In your terminal, cd to this repo
 ```bash
-$ cd doordash-chat-app
+$ cd chat-app
 ```
 2. Run the following commands
 ```bash
